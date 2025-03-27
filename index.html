@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentAI - AI Recruitment System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"> <!-- Link to homepage -->
+                    <img src="image.png" alt="TalentAI" class="logo-image">
+                    
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Login Section (Default View) -->
+        <section id="login-section">
+            <div class="section-header">
+                <h1>AI-Powered Recruitment System</h1>
+                <p>Welcome to TalentAI - Revolutionizing hiring with artificial intelligence</p>
+            </div>
+            
+            <div class="forms-container">
+                <!-- Admin Login -->
+                <div class="form-card">
+                    <div class="form-header">
+                        <h2>Admin Login</h2>
+                        <p>HR Team Access</p>
+                    </div>
+                    <form id="admin-login-form">
+                        <div class="form-group">
+                            <label for="admin-email">Email</label>
+                            <input type="email" id="admin-email" required placeholder="hr@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="admin-password">Password</label>
+                            <input type="password" id="admin-password" required placeholder="••••••••">
+                        </div>
+                        <!-- Admin Login Button -->
+                        <button type="submit" class="btn btn-filled">
+                          <span class="button-text">Sign In</span>
+                          <span class="spinner" style="display: none;">
+                          <i class="fas fa-spinner fa-spin"></i>
+                          </span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Candidate Login -->
+                <div class="form-card">
+                    <div class="form-header">
+                        <h2>Candidate Login</h2>
+                        <p>Applicant Access</p>
+                    </div>
+                    <form id="candidate-login-form">
+                        <div class="form-group">
+                            <label for="candidate-email">Email</label>
+                            <input type="email" id="candidate-email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="candidate-password">Password</label>
+                            <input type="password" id="candidate-password" required placeholder="••••••••">
+                        </div>
+                        <button type="submit" class="btn btn-filled">
+                          <span class="button-text">Sign In</span>
+                          <span class="spinner" style="display: none;">
+                              <i class="fas fa-spinner fa-spin"></i>
+                          </span></button>
+                    </form>
+                    <div class="form-footer">
+                        <p>New candidate? <a href="#" id="show-register">Register here</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Candidate Registration -->
+        <section id="register-section" style="display: none;">
+            <div class="section-header">
+                <h2>Candidate Registration</h2>
+                <p>Create your applicant profile</p>
+            </div>
+            <div class="form-card" style="max-width: 600px; margin: 0 auto;">
+                <form id="registration-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email</label>
+                        <input type="email" id="reg-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Password</label>
+                        <input type="password" id="reg-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resume">Upload Resume (PDF)</label>
+                        <input type="file" id="resume" accept=".pdf" required>
+                    </div>
+                    <button type="submit" class="btn btn-filled">Complete Registration</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard -->
+        <section id="admin-dashboard" class="dashboard">
+            <div class="dashboard-header">
+                <h2>Admin Dashboard</h2>
+                <button class="btn btn-filled" id="post-job-btn">
+                    <i class="fas fa-plus"></i> Post New Job
+                </button>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">24</div>
+                    <div class="stat-label">Active Job Postings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">156</div>
+                    <div class="stat-label">Total Applicants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">42</div>
+                    <div class="stat-label">AI Interviews Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">87%</div>
+                    <div class="stat-label">Hiring Efficiency</div>
+                </div>
+            </div>
+
+            <!-- AI Screening Results -->
+            <div style="margin-top: 3rem;">
+                <h3>AI-Screened Candidates</h3>
+                <div class="candidates-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Candidate</th>
+                                <th>Position</th>
+                                <th>Skills Match</th>
+                                <th>AI Interview Score</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample data - in real app this would be dynamic -->
+                            <tr>
+                                <td>Sarah Johnson</td>
+                                <td>Frontend Developer</td>
+                                <td>92%</td>
+                                <td>88%</td>
+                                <td><span class="status-badge status-success">Recommended</span></td>
+                                <td>
+                                    <button class="btn action-button btn-filled">View</button>
+                                    <button class="btn action-button btn-secondary">Schedule</button>
+                                </td>
+                            </tr>
+                            <!-- More rows would be here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Candidate Dashboard -->
+        <section id="candidate-dashboard" class="dashboard">
+            <div class="dashboard-header">
+                <h2>My Applications</h2>
+                <button class="btn btn-filled" id="apply-job-btn">
+                    <i class="fas fa-search"></i> Find Jobs
+                </button>
+            </div>
+
+            <!-- Application Status -->
+            <div class="application-card">
+                <h3>Frontend Developer at TechCorp</h3>
+                <div class="progress-steps">
+                    <div class="step completed">
+                        <div class="step-icon"><i class="fas fa-check"></i></div>
+                        <div class="step-label">Applied</div>
+                    </div>
+                    <div class="step completed">
+                        <div class="step-icon"><i class="fas fa-check"></i></div>
+                        <div class="step-label">AI Screened</div>
+                    </div>
+                    <div class="step active">
+                        <div class="step-icon"><i class="fas fa-comments"></i></div>
+                        <div class="step-label">AI Interview</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fas fa-clipboard-check"></i></div>
+                        <div class="step-label">Decision</div>
+                    </div>
+                </div>
+
+                <!-- AI Interview Section -->
+                <div class="interview-container">
+                    <h4>AI Interview Simulation</h4>
+                    <div id="interview-chat" style="height: 200px; overflow-y: auto; margin-bottom: 1rem; border: 1px solid var(--border); padding: 1rem; border-radius: 8px;">
+                        <!-- Interview messages will appear here -->
+                        <div class="ai-message">Hello! I'm your AI interviewer. Let's begin with your first question...</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="interview-response">Your Response:</label>
+                        <textarea id="interview-response" rows="3" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border);"></textarea>
+                    </div>
+                    <button id="submit-response" class="btn btn-filled">Submit Answer</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Application Modal (Hidden) -->
+        <div id="job-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+            <div class="form-card" style="max-width: 600px; max-height: 80vh; overflow-y: auto;">
+                <h3>Apply for Position</h3>
+                <form id="job-application-form">
+                    <!-- Form fields would be here -->
+                    <button type="submit" class="btn btn-filled">Submit Application</button>
+                    <button type="button" id="close-modal" class="btn btn-secondary" style="margin-left: 1rem;">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
