@@ -1,4 +1,4 @@
-<a href= "https://mushafmirdev.github.io/AI-HR-Management-System/">Click Here to Dispaly AI-HR Management System</a>
+<a href= "https://mushafmirdev.github.io/AI-HR-Management-System/">Click to Dispaly AI-HR Management System</a>
 
 
 # **Technical White Paper: AI-HR Management System**  
